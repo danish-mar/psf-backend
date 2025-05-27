@@ -3,3 +3,7 @@ node_modules
 *.log
 *.swp
 .env
+/dist
+coverage
+.vscode
+.idea/*
