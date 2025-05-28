@@ -3,7 +3,6 @@ import { Schema, model, Document, Types } from "mongoose";
 export interface IApplication extends Document {
   job: Types.ObjectId;
   applicant: Types.ObjectId;
-  resumeUrl?: string;
   coverLetter?: string;
   appliedAt: Date;
   status: "pending" | "reviewed" | "rejected" | "accepted";
@@ -12,7 +11,6 @@ export interface IApplication extends Document {
 const applicationSchema = new Schema<IApplication>({
   job: { type: Schema.Types.ObjectId, ref: "Job", required: true },
   applicant: { type: Schema.Types.ObjectId, ref: "User", required: true },
-  resumeUrl: { type: String },
   coverLetter: { type: String },
   appliedAt: { type: Date, default: Date.now },
   status: {

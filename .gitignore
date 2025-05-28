@@ -6,4 +6,4 @@ node_modules
 /dist
 coverage
 .vscode
-.idea/*
+/.idea

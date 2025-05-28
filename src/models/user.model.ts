@@ -6,6 +6,8 @@ export interface IUser extends Document {
   password: string; // hashed password
   role: "admin" | "applicant";
   createdAt: Date;
+  skills: string[];
+  phone_no: string;
 }
 
 const userSchema = new Schema<IUser>({
@@ -14,6 +16,8 @@ const userSchema = new Schema<IUser>({
   password: { type: String, required: true },
   role: { type: String, enum: ["admin", "applicant"], default: "applicant" },
   createdAt: { type: Date, default: Date.now },
+  skills: { type: [String], default: [] },
+  phone_no: { type: String, required: true}
 });
 
 export const User = model<IUser>("User", userSchema);
